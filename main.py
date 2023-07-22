@@ -4,7 +4,7 @@ with urllib.request.urlopen('https://api.github.com/users/zzajang-bro/repos') as
     content = response.read()
 dat = json.loads(content)
 #print(dat) // array of dict
-nameList = [el['name'] for el in dat]
+nameList = [(el['name'], el['description']) for el in dat]
 for i in range(len(nameList)):
     print(nameList[i])
 input()
